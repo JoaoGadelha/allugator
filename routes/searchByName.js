@@ -1,14 +1,15 @@
 let express = require('express');
-let getClientName = express.Router();
-let User = require('../usrSchema.js');
+let employee = express.Router();
+let allugator = require('../employeeSchema.js');
 
-getClientName.post('/:name', async (req, res) => {
+employee.get('/:name', async (req, res) => {
     try {
-        let clientName = await User.find({ name: req.params.name });
-        return res.json({clientName:clientName[0].name});
+        console.log('Searching by name...')
+        let employeeName = await allugator.find({ "name": { "$regex": req.params.name, "$options": "i" } });
+        return res.json(employeeName);
     } catch (err) {
         res.json({ message: err });
     }
 })
 
-module.exports = getClientName;
+module.exports = employee;

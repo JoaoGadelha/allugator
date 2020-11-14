@@ -1,14 +1,28 @@
 let express = require('express');
-let getClientName = express.Router();
-let User = require('../usrSchema.js');
+let registerDate = express.Router();
+let User = require('../employeeSchema.js');
 
-getClientName.post('/:id', async (req, res) => {
+registerDate.get('/:date', async (req, res) => {
     try {
-        let clientName = await User.find({ _id: req.params.id });
-        return res.json({clientName:clientName[0].name});
+        let rawDate = req.params.date;
+        let processedDate = [];
+        let j = 0;
+        for (let i = 0; i < rawDate.length+2; i++) {
+            processedDate[i] = rawDate[j];
+            if (i === 2 || i === 5) {
+                processedDate[i] = '/'
+            } else {
+                j++;
+            }
+        }
+        
+
+
+        let registerDate = await User.find({ date: processedDate.join("") });
+        return res.json(registerDate);
     } catch (err) {
         res.json({ message: err });
     }
 })
 
-module.exports = getClientName;
+module.exports = registerDate;

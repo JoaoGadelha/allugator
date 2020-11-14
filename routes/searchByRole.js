@@ -1,14 +1,14 @@
 let express = require('express');
-let getClientName = express.Router();
-let User = require('../usrSchema.js');
+let getRole = express.Router();
+let User = require('../employeeSchema.js');
 
-getClientName.post('/:id', async (req, res) => {
+getRole.get('/:role', async (req, res) => {
     try {
-        let clientName = await User.find({ _id: req.params.id });
-        return res.json({clientName:clientName[0].name});
+        let roleName = await User.find({ "role": { "$regex": req.params.role, "$options": "i" } });
+        return res.json(roleName);
     } catch (err) {
         res.json({ message: err });
     }
 })
 
-module.exports = getClientName;
+module.exports = getRole;

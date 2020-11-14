@@ -1,14 +1,20 @@
 let express = require('express');
-let getClientName = express.Router();
-let User = require('../usrSchema.js');
+let employeeCPF = express.Router();
+let allugator = require('../employeeSchema.js');
 
-getClientName.post('/:id', async (req, res) => {
+employeeCPF.get('/:cpf', async (req, res) => {
     try {
-        let clientName = await User.find({ _id: req.params.id });
-        return res.json({clientName:clientName[0].name});
+        console.log('Requesting database - CPF...');
+        const employeeCPF = await allugator.find({CPF: req.params.cpf});
+        if (employeeCPF.length === 0) {
+            console.log('Employee not found.')
+        } else {
+            console.log('Employee data: ' + employeeCPF)
+        }
+        return res.json(employeeCPF);
     } catch (err) {
         res.json({ message: err });
     }
 })
 
-module.exports = getClientName;
+module.exports = employeeCPF;

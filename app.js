@@ -4,6 +4,12 @@ const cors = require('cors');
 require('dotenv').config();
 const mongoose = require('mongoose');
 let searchByName = require('./routes/searchByName');
+let employeeCPF = require('./routes/searchByCPF');
+let birthState = require('./routes/searchByBirthState')
+let registerDate = require('./routes/searchByRegisterDate')
+let roleName = require('./routes/searchByRole')
+let salaryRange = require('./routes/searchBySalaryRange')
+let status = require('./routes/searchByStatus')
 //let getUsr = require('./routes/getUsr');
 //let login = require('./routes/login');
 //let getShopCart = require('./routes/getShopCart');
@@ -17,9 +23,14 @@ app.use(express.static('public'));
 app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
 //app.use(express.json());
-
 //routes
 app.use('/name', searchByName);
+app.use('/cpf', employeeCPF);
+app.use('/state', birthState);
+app.use('/date', registerDate);
+app.use('/role', roleName)
+app.use('/salary', salaryRange)
+app.use('/status', status);
 //app.use('/get', getUsr);
 //app.use('/login',login);
 //app.use('/getShopCart', getShopCart);
