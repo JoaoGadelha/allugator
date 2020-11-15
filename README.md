@@ -16,6 +16,42 @@ Para rodar o aplicativo em modo de desenvolvimento, insira
 
 na pasta do aplicativo.
 
-## Características
+## Rotas
 
-O site é composto de uma janela de busca, onde se pode definir os critérios de busca, como por 'nome' ou 'cargo' do funcionário. A janela de busca também disponibiliza um botão para criação de um novo registro de funcionário, o qual abre uma janela para preenchimento do formulário de registro. Além disso, o site disponibiliza uma janela para exibição dos resultados de busca.
+### GET `/name/:name`
+
+Retorna o resultado da busca por nome
+
+### GET `/CPF/:CPF`
+
+Retorna o resultado da busca por CPF
+
+### GET `/role/:role`
+
+Retorna o resultado da busca por cargo
+
+### GET `/state/:state`
+
+Retorna o resultado da busca por estado
+
+### GET `/salary/:salary`
+
+Retorna o resultado da busca por salário
+
+### GET `/date/:date`
+
+Retorna o resultado da busca por data
+
+### GET `/status/:status`
+
+Retorna o resultado da busca por status
+
+### GET `/delete/:CPF`
+
+Deleta o registro do usuário
+
+### POST `/register/`
+
+Cria um novo registro de usuário
+
+
