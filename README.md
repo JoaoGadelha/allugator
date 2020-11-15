@@ -54,4 +54,8 @@ Deleta o registro do usuário
 
 Cria um novo registro de usuário
 
+## Criar tabela de funcionários
 
+- O programa `convertTxtToJson.js` converte os dados de cada funcionário no arquivo `employeeDatabase.txt` em um array de objetos. Cada objeto contém os dados de um funcionário.
+
+- O programa `saveEmployeesInDatabase.js` recebe o objeto criado pelo programa `convertTxtToJson.js` e cria, a partir desse objeto, uma tabela no MongoDB Atlas.
