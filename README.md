@@ -1,5 +1,9 @@
 # Backend do Allugator
 
+## Documentação swagger
+
+https://app.swaggerhub.com/apis-docs/JoaoGadelha/Allugator/1.0.0
+
 ## Instalar aplicativo 
 
 Para instalar o aplicativo, insira
