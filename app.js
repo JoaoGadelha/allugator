@@ -10,6 +10,8 @@ let registerDate = require('./routes/searchByRegisterDate')
 let roleName = require('./routes/searchByRole')
 let salaryRange = require('./routes/searchBySalaryRange')
 let status = require('./routes/searchByStatus')
+let deleteEmployee = require('./routes/deleteEmployee')
+let registerEmployee = require('./routes/registerEmployee')
 //let getUsr = require('./routes/getUsr');
 //let login = require('./routes/login');
 //let getShopCart = require('./routes/getShopCart');
@@ -31,6 +33,8 @@ app.use('/date', registerDate);
 app.use('/role', roleName)
 app.use('/salary', salaryRange)
 app.use('/status', status);
+app.use('/delete', deleteEmployee);
+app.use('/register', registerEmployee);
 //app.use('/get', getUsr);
 //app.use('/login',login);
 //app.use('/getShopCart', getShopCart);

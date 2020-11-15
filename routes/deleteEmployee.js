@@ -1,14 +1,14 @@
 let express = require('express');
-let getClientName = express.Router();
-let User = require('../usrSchema.js');
+let deleteEmployee = express.Router();
+let User = require('../employeeSchema.js');
 
-getClientName.post('/:id', async (req, res) => {
+deleteEmployee.get('/:cpf', async (req, res) => {
     try {
-        let clientName = await User.find({ _id: req.params.id });
-        return res.json({clientName:clientName[0].name});
+        let deleted = await User.deleteOne({ CPF: req.params.cpf });
+        return res.json(deleted);
     } catch (err) {
         res.json({ message: err });
     }
 })
 
-module.exports = getClientName;
+module.exports = deleteEmployee;

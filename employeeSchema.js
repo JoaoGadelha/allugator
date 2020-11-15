@@ -1,9 +1,5 @@
  const mongoose = require('mongoose');
  
-/* const employeeSchema = mongoose.Schema({
-    CPF: String
-});
- */
 
  const employeeSchema = new mongoose.Schema({
     CPF: String,
