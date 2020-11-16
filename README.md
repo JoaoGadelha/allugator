@@ -1,5 +1,7 @@
 # Backend do Allugator
 
+API RESTful para pesquisa e cadastro de funcionários implementada em Node.js/Express.js. O site está rodando em https://allugator.herokuapp.com/, e o frontend implementado em React.js que utiliza esta API está em https://allugator.netlify.app/
+
 ## Documentação swagger
 
 https://app.swaggerhub.com/apis-docs/JoaoGadelha/Allugator/1.0.0
